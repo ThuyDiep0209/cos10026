@@ -2,83 +2,77 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LAB 03</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Demonstrates some basic HTML form elements">
+    <meta name="keywords" content="HTML, Form, tags">
+    <meta name="author" content="A Lecturer">
+    <title>HTML Form Example</title>
 </head>
 
 <body>
-    <img src="./logo.png" alt="">
+    <img src="./images/logo.png" alt="Cat Show Logo">
     <h1>Cat Show Registration Page</h1>
 
-    <form action="#" method="post">
-        <!-- Owner Details -->
-        <label for="owner">Owner's Name</label>
-        <input type="text" id="owner" name="owner" required>
-        <br><br>
+    <form method="post" action="http://mercury.swin.edu.au/it000000/formtest.php">
+        <p><label for="owner">Owner's Name</label>
+            <input type="text" name="owner" id="owner" required>
+        </p>
+        <p><label for="email">Email</label>
+            <input type="email" name="email" id="email" required>
+        </p>
 
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required>
-        <br><br>
-
-        <!-- Cat Information -->
         <fieldset>
             <legend>Cat Information Details</legend>
-
-            <label for="catname">Cat's Name</label>
-            <input type="text" id="catname" name="catname" required>
-            <br><br>
-
-            <label for="breed">Breed</label>
-            <select id="breed" name="breed">
-                <option value="British Shorthair">British Shorthair</option>
-                <option value="Persian">Persian</option>
-                <option value="Maine Coon">Maine Coon</option>
-                <option value="Siamese">Siamese</option>
-            </select>
-            <br><br>
-
-            <label for="dob">Date of Birth</label>
-            <input type="date" id="dob" name="dob">
-            <br><br>
-
-            <fieldset>
-                <legend>Sex</legend>
-                <input type="radio" id="male" name="sex" value="Male">
-                <label for="male">Male</label>
-
-                <input type="radio" id="female" name="sex" value="Female">
-                <label for="female">Female</label>
-            </fieldset>
+            <p><label for="catname">Cat's Name</label>
+                <input type="text" name="catname" id="catname" maxlength="20" size="10" required>
+            </p>
+            <p><label for="breed">Breed</label>
+                <select name="breed" id="breed">
+                    <option value="british">British Shorthair</option>
+                    <option value="burmese">Burmese</option>
+                    <option value="manx">Manx</option>
+                    <option value="ragdoll">Ragdoll</option>
+                    <option value="russian">Russian Blue</option>
+                    <option value="siamese">Siamese</option>
+                    <option value="other">Other</option>
+                </select>
+            </p>
+            <p><label for="dob">Date of Birth (dd-mm-yyyy)</label>
+                <input type="date" name="dob" id="dob">
+            </p>
         </fieldset>
 
-        <!-- Competition Categories -->
+        <fieldset>
+            <legend>Sex</legend>
+            <p><label for="male">Male</label>
+                <input type="radio" id="male" name="sex" value="male">
+            </p>
+            <p><label for="female">Female</label>
+                <input type="radio" id="female" name="sex" value="female">
+            </p>
+        </fieldset>
+
         <fieldset>
             <legend>Competition Categories</legend>
             <p>Select which categories you would like your cat entered</p>
-
-            <input type="checkbox" id="bestofbreed" name="categories[]" value="Best of Breed" checked>
-            <label for="bestofbreed">Best of Breed</label><br>
-
-            <input type="checkbox" id="cutest" name="categories[]" value="Cutest">
-            <label for="cutest">Cutest</label><br>
-
-            <input type="checkbox" id="ugliest" name="categories[]" value="Ugliest">
-            <label for="ugliest">Ugliest</label>
+            <p><label for="bb">Best of Breed</label>
+                <input type="checkbox" id="bb" name="category[]" value="best" checked>
+            </p>
+            <p><label for="cute">Cutest</label>
+                <input type="checkbox" id="cute" name="category[]" value="cute">
+            </p>
+            <p><label for="ugly">Ugliest</label>
+                <input type="checkbox" id="ugly" name="category[]" value="ugly">
+            </p>
         </fieldset>
 
-        <!-- Comments -->
-        <br>
-        <label for="comments">Comments</label><br>
-        <textarea id="comments" name="comments" rows="3" cols="40"></textarea>
-        <br><br>
+        <p><label for="comments">Comments</label>
+            <textarea id="comments" name="comments" rows="4" cols="40"></textarea>
+        </p>
 
-        <!-- Buttons -->
-        <button type="submit">Register</button>
-        <button type="reset">Reset Form</button>
+        <input type="submit" value="Register">
+        <input type="reset" value="Reset Form">
     </form>
-
-
 </body>
 
 </html>
