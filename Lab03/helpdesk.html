@@ -3,74 +3,111 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="description" content="Demonstrates some basic HTML form elements">
-    <meta name="keywords" content="HTML, Form, tags">
-    <meta name="author" content="A Lecturer">
-    <title>HTML Form Example</title>
+    <meta name="description" content="CWA Help Desk Appointment Form">
+    <meta name="keywords" content="HTML, Form, CWA, Help Desk">
+    <meta name="author" content="Swinburne Lecturer">
+    <title>CWA Help Desk Appointment</title>
 </head>
 
 <body>
-    <img src="./images/logo.png" alt="Cat Show Logo">
-    <h1>Cat Show Registration Page</h1>
+    <!-- Logo Hyperlink -->
+    <a href="http://www.swin.edu.au" target="_blank">
+        <img src="./images/logo.png" alt="Swinburne Logo">
+    </a>
+
+    <h1>CWA Help Desk Appointment</h1>
+
+    <p>The Help Desk is located in ATC620. Open 10:30 to 19:00 Monday to Friday.</p>
+    <p>Check Blackboard for when CWA tutors will be there.</p>
 
     <form method="post" action="http://mercury.swin.edu.au/it000000/formtest.php">
-        <p><label for="owner">Owner's Name</label>
-            <input type="text" name="owner" id="owner" required>
-        </p>
-        <p><label for="email">Email</label>
-            <input type="email" name="email" id="email" required>
-        </p>
-
         <fieldset>
-            <legend>Cat Information Details</legend>
-            <p><label for="catname">Cat's Name</label>
-                <input type="text" name="catname" id="catname" maxlength="20" size="10" required>
+            <legend>Student details</legend>
+
+            <!-- Student ID -->
+            <p>
+                <label for="studentid">Student ID</label>
+                <input type="text" name="studentid" id="studentid" required pattern="\d{7,10}"
+                    placeholder="Enter 7-10 digit Student ID">
             </p>
-            <p><label for="breed">Breed</label>
-                <select name="breed" id="breed">
-                    <option value="british">British Shorthair</option>
-                    <option value="burmese">Burmese</option>
-                    <option value="manx">Manx</option>
-                    <option value="ragdoll">Ragdoll</option>
-                    <option value="russian">Russian Blue</option>
-                    <option value="siamese">Siamese</option>
-                    <option value="other">Other</option>
+
+            <!-- Given Name & Family Name -->
+            <p>
+                <label for="givenname">Given Name</label>
+                <input type="text" name="givenname" id="givenname" maxlength="15" required pattern="[A-Za-z]+"
+                    placeholder="Enter given name">
+
+                <label for="familyname">Family Name</label>
+                <input type="text" name="familyname" id="familyname" maxlength="15" required pattern="[A-Za-z]+"
+                    placeholder="Enter family name">
+            </p>
+        </fieldset>
+
+        <!-- Your Unit -->
+        <fieldset>
+            <legend>Your unit</legend>
+            <input type="radio" id="cos10011" name="unit" value="COS10011" required>
+            <label for="cos10011">COS10011</label>
+
+            <input type="radio" id="cos60004" name="unit" value="COS60004">
+            <label for="cos60004">COS60004</label>
+
+            <input type="radio" id="cos60007" name="unit" value="COS60007">
+            <label for="cos60007">COS60007</label>
+
+            <p>
+                <label for="tutor">Your Tutor</label>
+                <select name="tutor" id="tutor" required>
+                    <option value="">-- Please Select --</option>
+                    <option value="John Smith">John Smith</option>
+                    <option value="Jane Doe">Jane Doe</option>
+                    <option value="Alex Nguyen">Alex Nguyen</option>
+                    <option value="Sara Lee">Sara Lee</option>
                 </select>
             </p>
-            <p><label for="dob">Date of Birth (dd-mm-yyyy)</label>
-                <input type="date" name="dob" id="dob">
-            </p>
         </fieldset>
 
+        <!-- Issue -->
         <fieldset>
-            <legend>Sex</legend>
-            <p><label for="male">Male</label>
-                <input type="radio" id="male" name="sex" value="male">
-            </p>
-            <p><label for="female">Female</label>
-                <input type="radio" id="female" name="sex" value="female">
+            <legend>Issue</legend>
+            <input type="checkbox" id="html" name="issue[]" value="HTML" checked>
+            <label for="html">HTML</label>
+
+            <input type="checkbox" id="css" name="issue[]" value="CSS">
+            <label for="css">CSS</label>
+
+            <input type="checkbox" id="js" name="issue[]" value="JavaScript">
+            <label for="js">JavaScript</label>
+
+            <input type="checkbox" id="php" name="issue[]" value="PHP">
+            <label for="php">PHP</label>
+
+            <input type="checkbox" id="mysql" name="issue[]" value="MySQL">
+            <label for="mysql">MySQL</label>
+
+            <p>
+                <label for="description">Description of Issue</label>
+                <br />
+                <textarea id="description" name="description" rows="4" cols="40"
+                    placeholder="Write description of your problem here..."></textarea>
             </p>
         </fieldset>
 
+        <!-- Preferred Date / Time -->
         <fieldset>
-            <legend>Competition Categories</legend>
-            <p>Select which categories you would like your cat entered</p>
-            <p><label for="bb">Best of Breed</label>
-                <input type="checkbox" id="bb" name="category[]" value="best" checked>
+            <legend>Preferred Date / Time</legend>
+            <p>
+                <label for="date">Date</label>
+                <input type="text" id="date" name="date" placeholder="dd/mm/yyyy" pattern="\d{2}/\d{2}/\d{4}">
             </p>
-            <p><label for="cute">Cutest</label>
-                <input type="checkbox" id="cute" name="category[]" value="cute">
-            </p>
-            <p><label for="ugly">Ugliest</label>
-                <input type="checkbox" id="ugly" name="category[]" value="ugly">
+            <p>
+                <label for="time">Time</label>
+                <input type="text" id="time" name="time" placeholder="hh:mm" pattern="\d{2}:\d{2}">
             </p>
         </fieldset>
 
-        <p><label for="comments">Comments</label>
-            <textarea id="comments" name="comments" rows="4" cols="40"></textarea>
-        </p>
-
-        <input type="submit" value="Register">
+        <!-- Buttons -->
+        <input type="submit" value="Book">
         <input type="reset" value="Reset Form">
     </form>
 </body>
