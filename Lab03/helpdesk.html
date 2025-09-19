@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAB 03</title>
+</head>
+
+<body>
+    <img src="./logo.png" alt="">
+    <h1>Cat Show Registration Page</h1>
+
+    <form action="#" method="post">
+        <!-- Owner Details -->
+        <label for="owner">Owner's Name</label>
+        <input type="text" id="owner" name="owner" required>
+        <br><br>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+        <br><br>
+
+        <!-- Cat Information -->
+        <fieldset>
+            <legend>Cat Information Details</legend>
+
+            <label for="catname">Cat's Name</label>
+            <input type="text" id="catname" name="catname" required>
+            <br><br>
+
+            <label for="breed">Breed</label>
+            <select id="breed" name="breed">
+                <option value="British Shorthair">British Shorthair</option>
+                <option value="Persian">Persian</option>
+                <option value="Maine Coon">Maine Coon</option>
+                <option value="Siamese">Siamese</option>
+            </select>
+            <br><br>
+
+            <label for="dob">Date of Birth</label>
+            <input type="date" id="dob" name="dob">
+            <br><br>
+
+            <fieldset>
+                <legend>Sex</legend>
+                <input type="radio" id="male" name="sex" value="Male">
+                <label for="male">Male</label>
+
+                <input type="radio" id="female" name="sex" value="Female">
+                <label for="female">Female</label>
+            </fieldset>
+        </fieldset>
+
+        <!-- Competition Categories -->
+        <fieldset>
+            <legend>Competition Categories</legend>
+            <p>Select which categories you would like your cat entered</p>
+
+            <input type="checkbox" id="bestofbreed" name="categories[]" value="Best of Breed" checked>
+            <label for="bestofbreed">Best of Breed</label><br>
+
+            <input type="checkbox" id="cutest" name="categories[]" value="Cutest">
+            <label for="cutest">Cutest</label><br>
+
+            <input type="checkbox" id="ugliest" name="categories[]" value="Ugliest">
+            <label for="ugliest">Ugliest</label>
+        </fieldset>
+
+        <!-- Comments -->
+        <br>
+        <label for="comments">Comments</label><br>
+        <textarea id="comments" name="comments" rows="3" cols="40"></textarea>
+        <br><br>
+
+        <!-- Buttons -->
+        <button type="submit">Register</button>
+        <button type="reset">Reset Form</button>
+    </form>
+
+
+</body>
+
+</html>
