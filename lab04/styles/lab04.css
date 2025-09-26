@@ -1,12 +1,3 @@
-/*
-filename: lab04.css
-author: [Your Name]
-created: [date]
-last modified: [date]
-description: CSS styling for lab04.html
-*/
-
-/* Universal selector: toàn bộ trang */
 * {
     font-family: Calibri, sans-serif;
     color: #2F4F4F;
